@@ -7,6 +7,7 @@ A modern, responsive web-based Music Player developed during my internship at **
 ## 📌 Features
 
 - 🎧 **Music Controls** — Play, pause, next, and previous track navigation
+- 📂 **Drag & Drop Songs** — Add local MP3 files by dragging them into the app
 - 🎶 **Track Info Display** — Shows song title, artist, and total duration
 - ⏱️ **Interactive Progress Bar** — Allows seeking within the song
 - 🔊 **Volume Control** — Adjustable volume slider for real-time control
