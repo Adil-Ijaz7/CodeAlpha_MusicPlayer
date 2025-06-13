@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozek - Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="music-container">
+        <!-- Left Panel - Classic CD Player -->
+        <div class="player-panel">
+            <div class="header">
+                <h1>Music Categories</h1>
+                <div class="categories">
+                    <span class="active">Classic</span>
+                    <span>90s</span>
+                    <span>New</span>
+                    <span>Instrumental</span>
+                </div>
+            </div>
+
+            <div class="player-content">
+                <div class="song-info">
+                    <h2 id="song-title">The Suffering</h2>
+                    <p id="song-artist">Classic</p>
+                    <div class="time-display">
+                        <span id="current-time">1:54</span>
+                        <span id="total-time">3:35</span>
+                    </div>
+                </div>
+
+                <div class="cd-player">
+                    <div class="cd">
+                        <div class="cd-hole"></div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                    <button id="play-btn"><i class="fas fa-play"></i></button>
+                    <button id="next-btn"><i class="fas fa-step-forward"></i></button>
+                </div>
+
+                <div class="progress-volume-row">
+                    <div class="progress-container">
+                        <input type="range" id="progress-bar" min="0" max="100" value="0">
+                    </div>
+                    <div class="volume-control">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" id="volume-bar" min="0" max="100" value="80">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel - Playlist -->
+        <div class="playlist-panel">
+            <div class="playlist-header">
+                <h2>Hurry Up Tomorrow</h2>
+            </div>
+            
+            <div class="playlist-content">
+                <ul id="song-list">
+                    <li class="active" data-src="song1.mp3" data-title="Sao Paulo" data-artist="The Weeknd" data-duration="5:01">
+                        <span class="song-name">Sao Paulo</span>
+                        <span class="song-artist">The Weeknd</span>
+                        <span class="song-duration">5:01</span>
+                    </li>
+                    <li data-src="song2.mp3" data-title="Cry For Me" data-artist="The Weeknd" data-duration="4:12">
+                        <span class="song-name">Cry For Me</span>
+                        <span class="song-artist">The Weeknd</span>
+                        <span class="song-duration">4:12</span>
+                    </li>
+                    <li data-src="song3.mp3" data-title="Timeless (feat Playboi Carti)" data-artist="The Weeknd, and Playboi Carti" data-duration="4:16">
+                        <span class="song-name">Timeless (feat Playboi Carti)</span>
+                        <span class="song-artist">The Weeknd, and Playboi Carti</span>
+                        <span class="song-duration">4:16</span>
+                    </li>
+                    <li data-src="song4.mp3" data-title="The Abyss (feat. Lana Del Rey)" data-artist="The Weeknd, and Lana Del Rey" data-duration="4:42">
+                        <span class="song-name">The Abyss (feat. Lana Del Rey)</span>
+                        <span class="song-artist">The Weeknd, and Lana Del Rey</span>
+                        <span class="song-duration">4:42</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

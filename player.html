@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .player {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #fff;
+            position: relative;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        input {
+            width: 200px;
+            margin-bottom: 20px;
+            padding: 5px;
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+        .turntable {
+            width: 300px;
+            height: 300px;
+            background: url('placeholder-turntable.jpg') no-repeat center;
+            background-size: contain;
+            position: relative;
+            margin: 0 auto 20px;
+        }
+        .cd {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url('cd-gif-placeholder.gif') no-repeat center;
+            background-size: contain;
+            display: flex; /* Hidden by default */
+            animation: spin 1s linear infinite; /* Animation for spinning */
+        }
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        .song-info {
+            margin-bottom: 20px;
+        }
+        .song-info h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .song-info span {
+            background: #fff;
+            color: #1a1a1a;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .song-info p {
+            margin: 5px 0;
+        }
+        .controls button {
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .categories span {
+            padding: 10px;
+            cursor: pointer;
+            border: 2px solid #fff;
+        }
+        .playlists {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .playlist {
+            text-align: center;
+        }
+        .playlist img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="player">
+        <h1>MUSIC2D</h1>
+        <input type="text" placeholder="Search for songs, artists">
+        <div class="turntable">
+            <div class="cd"></div>
+        </div>
+        <div class="song-info">
+            <h2>The Suffering</h2>
+            <span>Classic</span>
+            <p>1:54 / 3:35</p>
+        </div>
+        <div class="controls">
+            <button><</button>
+            <button><<</button>
+            <button>||</button>
+            <button>>></button>
+            <button>></button>
+        </div>
+        <div class="categories">
+            <span>Classic</span>
+            <span>90s</span>
+            <span>New</span>
+            <span>Instrumental</span>
+            <span>Modern</span>
+        </div>
+        <div class="playlists">
+            <div class="playlist">
+                <img src="placeholder-user.jpg" alt="User">
+                <p>Best of Eren<br>32 songs in this list</p>
+                <button>></button>
+            </div>
+            <div class="playlist">
+                <img src="placeholder-user.jpg" alt="User">
+                <p>Best of Eren<br>32 songs in this list</p>
+                <button>></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const playButton = document.querySelector('button:nth-child(3)');
+        const cd = document.querySelector('.cd');
+
+        playButton.addEventListener('click', () => {
+            if (cd.style.display === 'none' || cd.style.display === '') {
+                cd.style.display = 'block'; // Show CD GIF when play is clicked
+            } else {
+                cd.style.display = 'none'; // Hide CD GIF when paused
+            }
+        });
+    </script>
+</body>
+</html>
